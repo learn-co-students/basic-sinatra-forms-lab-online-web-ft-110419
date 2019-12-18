@@ -5,12 +5,18 @@
   <title>Basketball Team</title>
  </head>
  <body>
-   
-<%header_title = @new_team.to_a[0][0].split('_').map{|w| w.capitalize}.join(' ')%> <h1><%="#{header_title}: #{@new_team.to_a[0][1]}" %></h1>
-    <%@new_team.to_a[1..-1].each do |row| %>
-    <% title = row[0].split('_').map{|w| w.capitalize}.join(' ') %>
-        <h2><%= "#{title}: #{row[1]}" %></h2>
-    <% end %>
+   <%labels = ['Coach','Point Guard','Shooting Guard','Small Forward', 
+              'Power Forward','Center'
+              ] 
+    %>
+    
+    <h1><%= "Team Name: #{@new_team[0]}"%></h1>
+    <% labels.zip(@new_team[1..-1]).each do |row| %>
+      <h2>
+        <%= "#{row.first}: #{row.last}" %>
+      </h2>
+    <%end%>
+    
  </body>
 </html>
 
