@@ -5,9 +5,18 @@
   <title>Basketball Team</title>
  </head>
  <body>
- 
-
-
+   <%labels = ['Coach','Point Guard','Shooting Guard','Small Forward', 
+              'Power Forward','Center'
+              ] 
+    %>
+    
+    <h1><%= "Team Name: #{@new_team[0]}"%></h1>
+    <% labels.zip(@new_team[1..-1]).each do |row| %>
+      <h2>
+        <%= "#{row.first}: #{row.last}" %>
+      </h2>
+    <%end%>
+    
  </body>
 </html>
 
