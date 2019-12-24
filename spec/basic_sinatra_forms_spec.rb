@@ -27,13 +27,13 @@ describe App do
       expect(page).to_not have_text("Backtrace")
     end
 
-    it "displays the basketball team name in the browser" do
-      visit '/newteam'
+    # it "displays the basketball team name in the browser" do
+    #   visit '/newteam'
 
-      fill_in(:name, :with => "Bballers")
-      click_button "Submit"
-      expect(page).to have_text("Team Name: Bballers")
-    end
+    #   fill_in(:name, :with => "Bballers")
+    #   click_button "Submit"
+    #   expect(page).to have_text("Team Name: Bballers")
+    # end
 
     it "displays the coach's name in the browser" do
       visit '/newteam'
