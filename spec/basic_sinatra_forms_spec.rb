@@ -2,12 +2,12 @@ describe App do
 
   describe 'GET /newteam' do
     it 'sends a 200 status code' do
-      get '/newteam'
+      get '/new-team-form'
       expect(last_response.status).to eq(200)
     end
 
     it 'renders basketball team form' do
-      visit '/newteam'
+      visit '/new-team-form'
       expect(page).to have_selector("form")
       expect(page).to have_field(:name)
       expect(page).to have_field(:coach)
@@ -21,14 +21,14 @@ describe App do
 
   describe 'POST /team' do
     it 'does not return Sinatra error page' do
-      visit '/newteam'
+      visit '/new-team-form'
 
       click_button "Submit"
       expect(page).to_not have_text("Backtrace")
     end
 
     it "displays the basketball team name in the browser" do
-      visit '/newteam'
+      visit '/new-team-form'
 
       fill_in(:name, :with => "Bballers")
       click_button "Submit"
@@ -36,7 +36,7 @@ describe App do
     end
 
     it "displays the coach's name in the browser" do
-      visit '/newteam'
+      visit '/new-team-form'
 
       fill_in(:coach, :with => "Walter")
       click_button "Submit"
@@ -45,7 +45,7 @@ describe App do
     end
 
     it "displays the point guard's name in the browser" do
-      visit '/newteam'
+      visit '/new-team-form'
 
       fill_in(:pg, :with => "Jeff")
       click_button "Submit"
@@ -54,7 +54,7 @@ describe App do
     end
 
     it "displays the shooting guard's name in the browser" do
-      visit '/newteam'
+      visit '/new-team-form'
 
       fill_in(:sg, :with => "Joe")
       click_button "Submit"
@@ -63,7 +63,7 @@ describe App do
     end
 
     it "displays the power forward's name in the browser" do
-      visit '/newteam'
+      visit '/new-team-form'
 
       fill_in(:pf, :with => "Danny")
       click_button "Submit"
@@ -73,7 +73,7 @@ describe App do
 
 
     it "displays the center's name in the browser" do
-      visit '/newteam'
+      visit '/new-team-form'
 
       fill_in(:c, :with => "Avi")
       click_button "Submit"
